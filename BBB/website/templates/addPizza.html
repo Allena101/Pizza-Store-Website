@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  .ingredients {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ingredient {
+    flex: 1 0 10%;
+    margin-right: 45px !important;
+    margin-bottom: 10px;
+  }
+</style>
+
+<h1>Create a new Pizza</h1>
+
+
+
+<div class="stockTopping">
+<form action="" method="POST">
+  <label for="name">Name your Pizza:  </label> 
+  <input type="text" name="pizzaName" required>
+  <label for="name"> and price (price is for medium size):  </label> 
+  <input type="text" name="pizzaPrice" required>
+  <br>
+  <br>
+  <br>
+  <!-- <label for="inventory">Inventory:</label> -->
+  <!-- <button class="create-pizza-btn" type="submit" name="addTopping" id="addPizza">Create Pizza</button> -->
+  <div class="ingredients">
+    <div class="ingredient">
+      <label for="ingredient1">Ingredient 1:</label>
+      <select name="ingredient1" id="ingredient1">
+        {% for ingredient in toppingList %}
+        <option value="{{ ingredient }}">{{ ingredient }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="ingredient">
+      <label for="ingredient2">Ingredient 2:</label>
+      <select name="ingredient2" id="ingredient2">
+        {% for ingredient in toppingList %}
+        <option value="{{ ingredient }}">{{ ingredient }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="ingredient">
+      <label for="ingredient3">Ingredient 3:</label>
+      <select name="ingredient3" id="ingredient3">
+        {% for ingredient in toppingList %}
+        <option value="{{ ingredient }}">{{ ingredient }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="ingredient">
+      <label for="ingredient4">Ingredient 4:</label>
+      <select name="ingredient4" id="ingredient4">
+        {% for ingredient in toppingList %}
+        <option value="{{ ingredient }}">{{ ingredient }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="ingredient">
+      <label for="ingredient5">Ingredient 5:</label>
+      <select name="ingredient5" id="ingredient5">
+        {% for ingredient in toppingList %}
+        <option value="{{ ingredient }}">{{ ingredient }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <br>
+  
+  <button class="create-pizza-btn" type="submit" name="addPizza" id="addPizza">Create Pizza</button>
+
+</form>
+
+<h2>Add it to the inventory new toppings below &darr;
+  :</h2>
+
+
+
+<form action="" method="POST">
+  <label for="name">Name of new Topping:</label>
+  <input type="text" name="toppingName" required>
+  <!-- <label for="inventory">Inventory:</label> -->
+  <button class="create-pizza-btn" type="submit" name="addTopping" id="addTopping">Add Topping</button>
+</form>
+
+
+{% endblock content %}
