@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Flex test</h1>
+
+    {% for post in posts %}
+        <p> post.title</p>
+        <p> post.content</p>
+    {% endfor %}
+
+{% endblock content %}

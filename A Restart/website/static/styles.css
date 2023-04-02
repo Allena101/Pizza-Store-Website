@@ -1,0 +1,330 @@
+body { 
+  margin: 0; 
+  padding: 0;
+  font-family: 'Arial', sans-serif; 
+  background-color: rgb(58, 58, 58);
+
+
+  /* font-family: "Roboto Outline", sans-serif; */
+}
+
+body.no-sidebar .main-content {
+  flex: 1;
+  margin-right: 0;
+  padding-left: 20px;
+
+}
+body.no-sidebar .sidebar-content {
+  display: none;
+}
+
+
+.header { 
+  /* height: 20vh;  */
+  /* background-color: rgb(7, 197, 57); */
+  background-color: black;
+  text-decoration: none !important;
+  color: #4CAF50;
+
+  /* color: red; */
+} 
+
+
+
+
+ 
+.main { 
+  display: flex;
+
+} 
+
+.main-content { 
+  background-color: rgb(58, 58, 58);
+  flex: 0 0 70%;
+} 
+ 
+.sidebar-content { 
+  background-color: rgb(58, 58, 58);
+  flex: 0 0 30%; 
+}
+
+.size-container label {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+
+  /* background-color: blueviolet; */
+}
+
+
+
+
+.pizza {
+  margin-left: 20px;
+
+}
+
+
+
+
+
+
+
+
+.pizzaForm {
+  /* background-color: #2196F3; */
+  border-radius: 15px;
+  border: 5px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+
+.pizzaForm.is-active {
+  border-color: rgba(0, 255, 51, 0.755);
+  
+}
+
+
+
+/* .out-of-stock {
+  background-color: #ef0707;
+}
+
+.in-stock {
+  background-color: #bfd30b;
+} */
+
+
+
+.alert-success {
+  background-color: #4CAF50; /* Green */
+  color: #FFFFFF; /* White */
+  font-size: 24px; /* Big font size */
+  font-weight: bold; /* Bold font weight */
+  text-align: center; /* Center text */
+  padding: 20px; /* Add some padding */
+  display: flex; /* Center emoji horizontally */
+  justify-content: center; /* Center emoji horizontally */
+  align-items: center; /* Center emoji vertically */
+}
+
+.alert-success::before {
+  content: "\1F355"; /* Pizza emoji */
+  margin-right: 10px; /* Add some space between the emoji and the text */
+
+}
+
+
+
+
+.ingredient label {
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 8px;
+  /* font-weight: bold; */
+  
+}
+
+
+
+
+/* #create-pizza-btn {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+} */
+
+.create-pizza-btn {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+}
+
+
+
+
+.myNAV {
+  display: flex;
+  padding: 10px;
+  margin-right: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  /* color: rgb(199, 16, 181); */
+  /* color: black; */
+  align-items: center;
+  /* justify-content: flex-start; */
+  text-decoration: none !important;
+
+}
+
+body nav a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+
+/* .myNAV a {
+  margin-left: auto;
+  margin-right: 5px;
+  text-decoration: none;
+} */
+
+
+
+a {
+  color: #61c5f4;
+  /* border: 2px solid rgb(13, 208, 36) !important; */
+  /* margin-left: 8; */
+  /* margin-right: auto; */
+
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px
+
+}
+
+
+
+/* #rightLink.a {
+  float: right;
+
+  text-align: right !important;
+}
+
+#a.rightLink {
+  float: right;
+
+  text-align: right !important;
+}
+
+#rightLink {
+  float: right;
+} */
+
+#rightLink {
+  float: right;
+}
+
+
+
+
+/* .myNAV a {
+  margin-left: auto;
+  margin-right: 5px;
+  text-decoration: none !important;
+} */
+
+
+
+
+/* nav.myNAV p {
+  margin-right: 20px;
+} */
+
+
+/* .myNAV a {
+  text-decoration: none;
+} */
+
+
+.list-container {
+  /* border-style: solid !important; */
+  /* border-color: rgba(236, 16, 16, 0.755); */
+  /* border:rgb(203, 11, 30); */
+  /* border-color: red !important; */
+  border: 4px solid black !important;
+  border-radius: 15px;
+  /* border: 15px solid #af202012; */
+  padding: 10px;
+  background-color: #a9f08f;
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+}
+
+.myMessage {
+  background-color: #fdd835;
+  border: 4px solid black !important;
+  /* color: #fff; */
+  /* font-size: 24px; */
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 30px;
+  max-width: 85%
+}
+
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #4CAF50;
+}
+.ingredient {
+  flex: 1 0 10%;
+  /* margin-right: 45px !important; */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #fdd835;
+  color: black;
+  /* border: 4px solid black */
+
+}
+
+
+.topping-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  background-color: #a9f08f;
+
+}
+
+#topMargin.topping-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px ;
+  /* display: block !important; */
+}
+
+
+#myForm input {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+
+
+#myHeadline.topping-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  background-color: yellow;
+
+}
+
+.myButton {
+  background-color: yellow;
+  border: 2px solid black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.myButton:hover {
+  background-color: #008CBA;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  border-color: white;
+}

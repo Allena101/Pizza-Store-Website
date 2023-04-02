@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<br>
+
+<h4 class='topping-container'>Update status with the radio buttons below:</h4>
+
+{% for topping in toppings %}
+<div class='topping-container'>
+  <form action="" method="POST" class="" id="pizzaForm-{{ topping.id }}">
+    <h3 class="pizzaName"> {{ topping.name }} </h3>
+    <h3 class="pizzaName">Current inventory status: {{ topping.inventory }}</h2>
+    <input type="hidden" name="topping_id" value="{{ topping.id }}">
+    
+    <div class="size-container">
+      <label for="{{ topping.id }}_nothing">
+        <input type="radio" name="{{ topping.id }}_size" id="{{ topping.id }}_nothing" value="nothing" onchange="enableButton({{ topping.id }})">
+        Nothing  
+      </label>
+
+      <label for="{{ topping.id }}_little">
+        <input type="radio" name="{{ topping.id }}_size" id="{{ topping.id }}_little" value="little" onchange="enableButton({{ topping.id }})">
+        Little
+      </label>
+
+      <label for="{{ topping.id }}_modest">
+        <input type="radio" name="{{ topping.id }}_size" id="{{ topping.id }}_modest" value="modest" onchange="enableButton({{ topping.id }})">
+        Modest
+      </label>
+
+      <label for="{{ topping.id }}_plenty">
+        <input type="radio" name="{{ topping.id }}_size" id="{{ topping.id }}_plenty" value="plenty" onchange="enableButton({{ topping.id }})">
+        Plenty
+      </label>
+
+    </div>
+    <button id="submit-button-{{ topping.id }}" class="myMessage" type="submit" name="submit_pizza" value="buy_{{ topping.id }}" disabled>Click to change topping inventory status</button>
+  </form>
+</div>
+
+{% endfor %}
+
+<script>
+  function enableButton(toppingId) {
+    var submitButton = document.getElementById('submit-button-' + toppingId);
+    var radioButtons = document.getElementsByName(toppingId + '_size');
+
+    for (var i = 0; i < radioButtons.length; i++) {
+      if (radioButtons[i].checked) {
+        submitButton.disabled = false;
+        return;
+      }
+    }
+
+    submitButton.disabled = true;
+  }
+</script>
+
+{% endblock content %}
