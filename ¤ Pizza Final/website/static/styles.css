@@ -1,0 +1,238 @@
+
+/*  This is the most messy part of this project that i did not have the time to clean up. I made some beginenr mistakes that made things messy at the end and it is hard to change things now when its so messy */
+
+
+body { 
+  margin: 0; 
+  padding: 0;
+  font-family: 'Arial', sans-serif; 
+  background-color: rgb(58, 58, 58);
+}
+
+
+/* I use a flex box display with one main-content div and one sidebar div. I also have a heading/navbar for links */
+
+
+
+/* This setting lets you disable the sidebar for pages that inherit from the base template (which have a sidebar) */
+
+body.no-sidebar .main-content {
+  flex: 1;
+  margin-right: 0;
+  padding-left: 20px;
+
+}
+body.no-sidebar .sidebar-content {
+  display: none;
+}
+
+
+.header { 
+  background-color: black;
+  text-decoration: none !important;
+  color: #4CAF50;
+} 
+
+ 
+.main { 
+  display: flex;
+} 
+
+.main-content { 
+  background-color: rgb(58, 58, 58);
+  flex: 0 0 70%;
+} 
+ 
+.sidebar-content { 
+  background-color: rgb(58, 58, 58);
+  flex: 0 0 30%; 
+}
+
+.size-container label {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.pizza {
+  margin-left: 20px;
+}
+
+.pizzaForm {
+  border-radius: 15px;
+  border: 5px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* This setting chagnes the border color of the pizza that is selected */
+.pizzaForm.is-active {
+  border-color: rgba(0, 255, 51, 0.755);
+}
+
+/*  Settings for the Flask Flash message. */
+.alert-success {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* add the pizza emoji... */
+.alert-success::before {
+  content: "\1F355";
+  margin-right: 10px;
+}
+
+/* The alert for when things go wrong */
+.alert-danger {
+  background-color: red;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredient label {
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 8px;
+}
+
+/* I should use myButton instead really */
+.create-pizza-btn {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+}
+
+/* for the remove button in the order list so they appear on the same line */
+#rightLink {
+  float: right;
+}
+
+
+/* I have some issues with priorites that i did not manage to solve in time so i had to use !important */
+.list-container {
+  border: 4px solid black !important;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #a9f08f;
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+}
+
+.myMessage {
+  background-color: #79075e;
+  color: white;
+  border: 4px solid black !important;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 30px;
+  max-width: 85%
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #4CAF50;
+}
+
+.ingredient {
+  flex: 1 0 10%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #fdd835;
+  color: black;
+}
+
+.topping-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  background-color: #a9f08f;
+}
+
+#topMargin.topping-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px ;
+}
+
+#myForm input {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#myHeadline.topping-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  background-color: yellow;
+}
+
+.myButton {
+  background-color: yellow;
+  border: 15px solid black !important;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Adds a shadow effect and change background color when hovering over the button to make it more clear that it can be clicked */
+.myButton:hover {
+  background-color: #008CBA;
+  border: 15px solid rgb(42, 43, 41) !important;
+}
+
+.sideBYside {
+  display: flex
+}
+
+.sideBYside button {
+  justify-self: flex-end; /* added line */
+  margin-left: 50px;
+}
+
+
+/* My flex solution did not work so i used this one that w3 showed */
+.topnav {
+  background-color: #252525;
+  overflow: hidden;
+  /* display: flex; */
+}
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.topnav-right {
+float: right;
+}
