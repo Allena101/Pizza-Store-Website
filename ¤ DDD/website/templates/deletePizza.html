@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Delete Pizza{% endblock %}
+{% block content %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+  <!-- Not much to comment on. I should have renamed the buttons so that it corresponds to deleting a pizza. Also, as i mentioned in the readme the classes are a bit of a mess  -->
+
+<div class='topping-container' id='topMargin'>
+<h1 class='myMessage'>Delete a Pizza</h1>
+<form action="" method="POST">
+  <label for="name">Select pizza that you wish to delete: </label> 
+  <select name="pizzaName" id="pizzaName">
+    {% for pizza in pizzas %}
+    <option value="{{ pizza.name }}">{{ pizza.name }}</option>
+    {% endfor %}
+  </select>
+  <br>
+  <br>
+
+  <button class="" type="submit" name="delete_pizza">Delete Pizza</button>
+
+  <h3 class='myMessage'>OR delete a Topping</h3>
+  
+  <label for="name">Select topping that you wish to delete: </label> 
+  <select name="toppingName" id="toppingName">
+    {% for topping in toppingList %}
+    <option value="{{ topping }}">{{ topping }}</option>
+    {% endfor %}
+  </select>
+
+  <br>
+  <br>
+
+  <button class="" type="submit" name="delete_topping">Delete Topping</button>
+</form>
+{% endblock content %}
