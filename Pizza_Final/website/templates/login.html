@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- I use flask_wtf to get the labels and the built in functionality also lets me loop through errors  -->
+    <div class='topping-container' id='topMargin'>
+        <!-- As mentioned elsewhere, the idea is that only the admin should be able to reach this page -->
+        <p class="myMessage">Only employees can log in here</p>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            {{ form.email.label }}
+            {% if form.email.errors %}
+                {{ form.email }}
+                <div class="">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.email }}
+            {% endif %}
+            {{ form.password.label }}
+            {% if form.password.errors %}
+                {{ form.password }}
+                <div class="">
+                    {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password }}
+            {% endif %}
+                <div class="">
+                    {{ form.remember }}
+                    {{ form.remember.label }}
+                </div>
+            <div class="">
+                {{ form.submit }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
