@@ -23,3 +23,5 @@ if __name__ == "__main__":
     #     load_example_data()
     # app.run(debug=True)
     app.run(debug=False)
+
+# change file name from main.py to app.py
